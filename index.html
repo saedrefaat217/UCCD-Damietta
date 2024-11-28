@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UCCD Damietta - استمارة تسجيل الطلاب</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #e3f2fd, #ffe082);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 600px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      text-align: center;
+      background: linear-gradient(to right, #1976d2, #ffd600);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 1.8em;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input, select, button {
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 16px;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    input:hover, select:hover {
+      border-color: #1976d2;
+    }
+
+    input:focus, select:focus {
+      border-color: #ffd600;
+      box-shadow: 0 0 8px rgba(255, 214, 0, 0.5);
+    }
+
+    button {
+      background: linear-gradient(to right, #1976d2, #ffd600);
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    button:hover {
+      background: linear-gradient(to right, #ffd600, #1976d2);
+    }
+
+    .form-group-inline {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .form-group-inline label {
+      flex: 1;
+    }
+
+    .highlight {
+      color: #ffaa00;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>UCCD Damietta - استمارة تسجيل الطلاب</h1>
+
+  <form action="register.php" method="post" enctype="multipart/form-data">
+    
+    <div class="form-group">
+      <label for="name">اسم الطالب:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">رقم الموبايل:</label>
+      <input type="text" id="phone" name="phone" required>
+    </div>
+
+    <div class="form-group">
+      <label for="national_id">الرقم القومي:</label>
+      <input type="text" id="national_id" name="national_id" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">البريد الإلكتروني:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="graduation_year">عام التخرج:</label>
+      <select id="graduation_year" name="graduation_year">
+        <option value="2024">2024</option>
+        <option value="2025">2025</option>
+        <option value="2026">2026</option>
+        <option value="2027">2027</option>
+        <option value="2028">2028</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="gender">النوع:</label>
+      <select id="gender" name="gender">
+        <option value="ذكر">ذكر</option>
+        <option value="أنثى">أنثى</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="front_id">صورة البطاقة (أمام):</label>
+      <input type="file" id="front_id" name="front_id" required>
+    </div>
+
+    <div class="form-group">
+      <label for="back_id">صورة البطاقة (خلف):</label>
+      <input type="file" id="back_id" name="back_id" required>
+    </div>
+
+    <div class="form-group">
+      <label for="card_image">صورة الكارنيه/إثبات القيد:</label>
+      <input type="file" id="card_image" name="card_image" required>
+    </div>
+
+    <div class="form-group">
+      <label for="birth_date">تاريخ الميلاد:</label>
+      <input type="date" id="birth_date" name="birth_date" required>
+    </div>
+
+    <div class="form-group">
+      <label for="course">الدورة المطلوبة:</label>
+      <select id="course" name="course">
+        <option value="EST">EST</option>
+        <option value="Business Techniques">Business Techniques</option>
+        <option value="Quality Control">Quality Control</option>
+        <option value="Health And Safety">Health And Safety</option>
+        <option value="FinTech">FinTech</option>
+        <option value="Sales">Sales</option>
+        <option value="Marketing">Marketing</option>
+        <option value="Project Management">Project Management</option>
+        <option value="HR">HR</option>
+        <option value="Supply Chains">Supply Chains</option>
+        <option value="Customer Service">Customer Service</option>
+      </select>
+    </div>
+
+    <button type="submit">تسجيل</button>
+  </form>
+</div>
+
+</body>
+</html>
