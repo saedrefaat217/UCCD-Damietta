@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UCCD Damietta Students Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1E90FF;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #FFD700;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #1E90FF;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>استمارة تسجيل الطلاب</h1>
+        <form action="register.php" method="POST" enctype="multipart/form-data">
+            <label for="name">اسم الطالب:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="phone">رقم الموبايل:</label>
+            <input type="text" id="phone" name="phone" required>
+
+            <label for="national_id">الرقم القومي:</label>
+            <input type="text" id="national_id" name="national_id" required>
+
+            <label for="email">البريد الإلكتروني:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="graduation_year">عام التخرج:</label>
+            <select name="graduation_year" id="graduation_year">
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
+                <option value="2027">2027</option>
+                <option value="2028">2028</option>
+            </select>
+
+            <label for="gender">النوع:</label>
+            <select name="gender" id="gender">
+                <option value="ذكر">ذكر</option>
+                <option value="أنثى">أنثى</option>
+            </select>
+
+            <label for="front_id">صورة البطاقة (أمام):</label>
+            <input type="file" id="front_id" name="front_id" required>
+
+            <label for="back_id">صورة البطاقة (خلف):</label>
+            <input type="file" id="back_id" name="back_id" required>
+
+            <label for="card_image">صورة الكارنيه/إثبات القيد:</label>
+            <input type="file" id="card_image" name="card_image" required>
+
+            <label for="birth_date">تاريخ الميلاد:</label>
+            <input type="date" id="birth_date" name="birth_date" required>
+
+            <label for="course">الدورة المطلوبة:</label>
+            <select name="course" id="course">
+                <option value="EST">EST</option>
+                <option value="Business Techniques">Business Techniques</option>
+                <option value="Quality Control">Quality Control</option>
+                <option value="Health And Safety">Health And Safety</option>
+                <option value="FinTech">FinTech</option>
+                <option value="Sales">Sales</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Project Management">Project Management</option>
+                <option value="HR">HR</option>
+                <option value="Supply Chains">Supply Chains</option>
+                <option value="Customer Service">Customer Service</option>
+            </select>
+
+            <button type="submit">تسجيل</button>
+        </form>
+    </div>
+
+</body>
+</html>
